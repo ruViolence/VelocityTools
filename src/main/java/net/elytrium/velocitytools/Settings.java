@@ -138,7 +138,6 @@ public class Settings extends YamlSerializable {
 
     public PROTOCOL_BLOCKER PROTOCOL_BLOCKER = new PROTOCOL_BLOCKER();
     public BRAND_CHANGER BRAND_CHANGER = new BRAND_CHANGER();
-    public HOSTNAMES_MANAGER HOSTNAMES_MANAGER = new HOSTNAMES_MANAGER();
 
     public static class PROTOCOL_BLOCKER {
 
@@ -178,27 +177,6 @@ public class Settings extends YamlSerializable {
       public boolean SHOW_ALWAYS = false;
       @Comment(@CommentValue("{0} - Original server brand (e.g. Paper)."))
       public String IN_GAME_BRAND = "YourServer ({0})";
-    }
-
-    @Comment(@CommentValue("Doesn't work with srv records."))
-    public static class HOSTNAMES_MANAGER {
-
-      public boolean BLOCK_JOIN = false;
-      public boolean BLOCK_PING = false;
-      @Comment(@CommentValue("Connections IP logging."))
-      public boolean DEBUG = false;
-      @Comment(@CommentValue("For \"debug\" option."))
-      public boolean SHOW_BLOCKED_ONLY = false;
-      @Comment(@CommentValue("For \"block-joining\" option, set to \"\" to show the default reason."))
-      public String KICK_REASON = "&cPlease, don't connect to the direct ip!\nUse example.com";
-      public boolean WHITELIST = true;
-      @Comment(@CommentValue("IP Addresses starting with \"127.\" or equal to \"localhost\" will be blocked."))
-      public boolean BLOCK_LOCAL_ADDRESSES = false;
-      @Comment(@CommentValue("DoMaIn.net will be similar to domain.net."))
-      public boolean IGNORE_CASE = true;
-      public List<String> HOSTNAMES = List.of("your-domain.net", "your-domain.com");
-      @Comment(@CommentValue("List of IP addresses that will bypass this check."))
-      public List<String> IGNORED_IPS = List.of("79.555.*", "228.1337.*");
     }
   }
 }
