@@ -92,6 +92,11 @@ public class VelocityToolsCommand implements SimpleCommand {
     }
   }
 
+  @Override
+  public boolean hasPermission(Invocation invocation) {
+    return invocation.source().hasPermission("velocitytools.admin");
+  }
+
   private void showHelp(CommandSource source) {
     HELP_MESSAGE.forEach(source::sendMessage);
 
