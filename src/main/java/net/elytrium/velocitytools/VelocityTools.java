@@ -153,20 +153,20 @@ public class VelocityTools {
       this.server.getCommandManager().register(aliases.get(0), new HubCommand(this.server), aliases.toArray(new String[0]));
     }
 
-    this.server.getCommandManager().unregister("alert");
-    this.server.getCommandManager().unregister("find");
-    this.server.getCommandManager().unregister("send");
     this.server.getCommandManager().unregister("velocitytools");
 
     if (Settings.IMP.COMMANDS.ALERT.ENABLED) {
+      this.server.getCommandManager().unregister("alert");
       this.server.getCommandManager().register("alert", new AlertCommand(this.server));
     }
 
     if (Settings.IMP.COMMANDS.FIND.ENABLED) {
+      this.server.getCommandManager().unregister("find");
       this.server.getCommandManager().register("find", new FindCommand(this.server));
     }
 
     if (Settings.IMP.COMMANDS.SEND.ENABLED) {
+      this.server.getCommandManager().unregister("send");
       this.server.getCommandManager().register("send", new SendCommand(this.server));
     }
 
